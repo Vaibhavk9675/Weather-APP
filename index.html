@@ -11,169 +11,171 @@
 
 <body>
   <!-- the main section -->
-  <section id="main">
-    <main>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#main">Weather APP</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" href="#main">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#about">About</a>
-              </li>
+  <div class="pt-5 + mt-3">
+    <section id="main">
+      <main>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top shadow-sm">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#main">Weather APP</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="#main">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#about">About</a>
+                </li>
 
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  Top Cities
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Delhi</a></li>
-                  <li><a class="dropdown-item" href="#">Jammu</a></li>
-                  <li><a class="dropdown-item" href="#">Gujrat</a></li>
-                  <li><a class="dropdown-item" href="#">Darjeeling</a></li>
-                </ul>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input id="city" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-              <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
-            </form>
-          </div>
-        </div>
-      </nav>
-      <!-- your 3 cards (Temperature, Cloudiness, Humidity) and table go here -->
-      <div class="container">
-        <h1 class="ny-4 text-center">Weather Today in <span id="cityName"></span></h1>
-        <p class="display-6 text-center mb-4" text-center"><span id="condition_text"></span></p>
-        <main>
-          <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-            <div class="col">
-              <div class="card mb-4 rounded-3 shadow-sm border-primary">
-                <div class="card-header py-3 text-bg-primary border-primary">
-                  <h4 class="my-0 fw-normal">Temperature</h4>
-                </div>
-                <div class="card-body">
-                  <h1 class="card-title pricing-card-title"><span id="temp_c2"></span><small
-                      class="text-body-secondary fw-light">°C</small></h1>
-                  <ul class="list-unstyled mt-3 mb-4">
-                    <li>Temperature is <span id="temp_c"></span></span>°C</span></li>
-                    <li>Feelslike <span id="feelslike_c"></span></span>°C</span></li>
-                    <li>Wind speed is <span id="wind_kph">h</span></span>&nbsp;km/h</span></li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Top Cities
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Delhi</a></li>
+                    <li><a class="dropdown-item" href="#">Jammu</a></li>
+                    <li><a class="dropdown-item" href="#">Gujrat</a></li>
+                    <li><a class="dropdown-item" href="#">Darjeeling</a></li>
                   </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card mb-4 rounded-3 shadow-sm border-primary">
-                <div class="card-header py-3 text-bg-primary border-primary">
-                  <h4 class="my-0 fw-normal">Cloudiness</h4>
-                </div>
-                <div class="card-body">
-                  <h1 class="card-title pricing-card-title"><span id="cloud2"></span><small
-                      class="text-body-secondary fw-light">%</small></h1>
-                  <ul class="list-unstyled mt-3 mb-4">
-                    <li>Cloud % is <span id="cloud"></span><span>%</span></li>
-                    <li>UV index is <span id="uv"></span><span>&nbsp;of&nbsp;11</span></li>
-                    <li>Atmospheric pressure is <span id="pressure_mb"></span><span>&nbsp;mb</span></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card mb-4 rounded-3 shadow-sm border-primary">
-                <div class="card-header py-3 text-bg-primary border-primary">
-                  <h4 class="my-0 fw-normal">Humidity</h4>
-                </div>
-                <div class="card-body">
-                  <h1 class="card-title pricing-card-title"><span id="humidity2"></span><small
-                      class="text-body-secondary fw-light">%</small></h1>
-                  <ul class="list-unstyled mt-3 mb-4">
-                    <li>Humidity % is <span id="humidity"></span><span>%</span></li>
-                    <li>Precipitation % is <span id="precip_in"></span><span>%</span></li>
-                    <li>Wind degree is <span id="wind_degree"><span></span>°c</span></li>
-                  </ul>
-                </div>
-              </div>
+                </li>
+              </ul>
+              <form class="d-flex" role="search">
+                <input id="city" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
+              </form>
             </div>
           </div>
-          <h2 class="display-6 text-center mb-4">Weather of other common places</h2>
-          <div class="table-responsive">
-            <table class="table text-center" id="weatherTable">
-              <thead>
-                <tr>
-                  <th style="width: 20%;"></th>
-                  <th style="width: 20%;">Temp&nbsp;(°C)</th>
-                  <th style="width: 20%;">Feels&nbsp;Like&nbsp;(°C)</th>
-                  <th style="width: 20%;">Humidity&nbsp;(%)</th>
-                  <th style="width: 20%;">Condition</th>
-                  <th style="width: 20%;">Wind&nbsp;Kph</th>
-                </tr>
-              </thead>
+        </nav>
+        <!-- your 3 cards (Temperature, Cloudiness, Humidity) and table go here -->
+        <div class="container">
+          <h1 class="ny-4 text-center">Weather Today in <span id="cityName"></span></h1>
+          <p class="display-6 text-center mb-4" text-center"><span id="condition_text"></span></p>
+          <main>
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                  <div class="card-header py-3 text-bg-primary border-primary">
+                    <h4 class="my-0 fw-normal">Temperature</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title"><span id="temp_c2"></span><small
+                        class="text-body-secondary fw-light">°C</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>Temperature is <span id="temp_c"></span></span>°C</span></li>
+                      <li>Feelslike <span id="feelslike_c"></span></span>°C</span></li>
+                      <li>Wind speed is <span id="wind_kph">h</span></span>&nbsp;km/h</span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                  <div class="card-header py-3 text-bg-primary border-primary">
+                    <h4 class="my-0 fw-normal">Cloudiness</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title"><span id="cloud2"></span><small
+                        class="text-body-secondary fw-light">%</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>Cloud % is <span id="cloud"></span><span>%</span></li>
+                      <li>UV index is <span id="uv"></span><span>&nbsp;of&nbsp;11</span></li>
+                      <li>Atmospheric pressure is <span id="pressure_mb"></span><span>&nbsp;mb</span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                  <div class="card-header py-3 text-bg-primary border-primary">
+                    <h4 class="my-0 fw-normal">Humidity</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title"><span id="humidity2"></span><small
+                        class="text-body-secondary fw-light">%</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>Humidity % is <span id="humidity"></span><span>%</span></li>
+                      <li>Precipitation % is <span id="precip_in"></span><span>%</span></li>
+                      <li>Wind degree is <span id="wind_degree"><span></span>°c</span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h2 class="display-6 text-center mb-4">Weather of other common places</h2>
+            <div class="table-responsive">
+              <table class="table text-center" id="weatherTable">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;"></th>
+                    <th style="width: 20%;">Temp&nbsp;(°C)</th>
+                    <th style="width: 20%;">Feels&nbsp;Like&nbsp;(°C)</th>
+                    <th style="width: 20%;">Humidity&nbsp;(%)</th>
+                    <th style="width: 20%;">Condition</th>
+                    <th style="width: 20%;">Wind&nbsp;Kph</th>
+                  </tr>
+                </thead>
 
-              <tbody>
-                <!-- Each row gets: 
+                <tbody>
+                  <!-- Each row gets: 
                   1) a city name in data‑city
                   2) a cell class we can reuse (temp, feelslike, humidity, precip, wind) -->
-                <tr data-city="Lucknow">
-                  <th class="text-start">Lucknow</th>
-                  <td class="temp">--</td>
-                  <td class="feelslike">--</td>
-                  <td class="humidity">--</td>
-                  <td class="precip">--</td>
-                  <td class="wind">--</td>
-                </tr>
+                  <tr data-city="Lucknow">
+                    <th class="text-start">Lucknow</th>
+                    <td class="temp">--</td>
+                    <td class="feelslike">--</td>
+                    <td class="humidity">--</td>
+                    <td class="precip">--</td>
+                    <td class="wind">--</td>
+                  </tr>
 
-                <tr data-city="Chandigarh">
-                  <th class="text-start">Chandigarh</th>
-                  <td class="temp">--</td>
-                  <td class="feelslike">--</td>
-                  <td class="humidity">--</td>
-                  <td class="precip">--</td>
-                  <td class="wind">--</td>
-                </tr>
+                  <tr data-city="Chandigarh">
+                    <th class="text-start">Chandigarh</th>
+                    <td class="temp">--</td>
+                    <td class="feelslike">--</td>
+                    <td class="humidity">--</td>
+                    <td class="precip">--</td>
+                    <td class="wind">--</td>
+                  </tr>
 
-                <tr data-city="Mumbai">
-                  <th class="text-start">Mumbai</th>
-                  <td class="temp">--</td>
-                  <td class="feelslike">--</td>
-                  <td class="humidity">--</td>
-                  <td class="precip">--</td>
-                  <td class="wind">--</td>
-                </tr>
+                  <tr data-city="Mumbai">
+                    <th class="text-start">Mumbai</th>
+                    <td class="temp">--</td>
+                    <td class="feelslike">--</td>
+                    <td class="humidity">--</td>
+                    <td class="precip">--</td>
+                    <td class="wind">--</td>
+                  </tr>
 
-                <tr data-city="Bangalore">
-                  <th class="text-start">Bangalore</th>
-                  <td class="temp">--</td>
-                  <td class="feelslike">--</td>
-                  <td class="humidity">--</td>
-                  <td class="precip">--</td>
-                  <td class="wind">--</td>
-                </tr>
+                  <tr data-city="Bangalore">
+                    <th class="text-start">Bangalore</th>
+                    <td class="temp">--</td>
+                    <td class="feelslike">--</td>
+                    <td class="humidity">--</td>
+                    <td class="precip">--</td>
+                    <td class="wind">--</td>
+                  </tr>
 
-                <tr data-city="Kolkata">
-                  <th class="text-start">Kolkata</th>
-                  <td class="temp">--</td>
-                  <td class="feelslike">--</td>
-                  <td class="humidity">--</td>
-                  <td class="precip">--</td>
-                  <td class="wind">--</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </main>
-      </div>
-    </main>
-  </section>
+                  <tr data-city="Kolkata">
+                    <th class="text-start">Kolkata</th>
+                    <td class="temp">--</td>
+                    <td class="feelslike">--</td>
+                    <td class="humidity">--</td>
+                    <td class="precip">--</td>
+                    <td class="wind">--</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </main>
+        </div>
+      </main>
+    </section>
+  </div>
   <!-- About Section -->
   <section id="about" class="container my-5 p-4 bg-light rounded shadow-sm">
     <h2 class="text-center mb-3">About</h2>
