@@ -27,53 +27,55 @@ const getWeather = (q) => {
 			humidity2.innerHTML = response.current.humidity
 			condition_text.innerHTML = response.current.condition.text
 
+			document.getElementById("loader").classList.add("d-none");
+			document.getElementById("mainContent").classList.remove("d-none");
+
 		})
 		.catch(error => console.error(error));
 }
 document.querySelector("form").addEventListener("submit", (e) => {
 	e.preventDefault(); // Prevent page reload
-	  const cityInput = document.getElementById("city");
-  const cityNameValue = cityInput.value.trim();
+	const cityInput = document.getElementById("city");
+	const cityNameValue = cityInput.value.trim();
 
-  if (cityNameValue !== "") {
-    getWeather(cityNameValue);      // Call the API
-    cityInput.value = "";           // ✅ Clear the search bar
-    cityInput.blur();               // (optional) Remove focus
-    // cityInput.focus();           // (optional) If you want to keep the cursor in input
+	if (cityNameValue !== "") {
+		getWeather(cityNameValue);
+		cityInput.value = "";           // ✅ Clear the search bar
+		cityInput.blur();
 
-	 const navbarCollapse = document.querySelector(".navbar-collapse");
-    if (navbarCollapse.classList.contains("show")) {
-      const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
-      bsCollapse.hide();
-    }
-  }
+		const navbarCollapse = document.querySelector(".navbar-collapse");
+		if (navbarCollapse.classList.contains("show")) {
+			const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+			bsCollapse.hide();
+		}
+	}
 });
 
 getWeather("Delhi")
 
 const getTableWeather = (city, row) => {
-  fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=${city}`, options)
-    .then((res) => res.json())
-    .then((data) => {
-      const current = data.current;
+	fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=${city}`, options)
+		.then((res) => res.json())
+		.then((data) => {
+			const current = data.current;
 
-      // Fill table cells
-      row.querySelector(".temp").textContent = current.temp_c;
-      row.querySelector(".feelslike").textContent = current.feelslike_c;
-      row.querySelector(".humidity").textContent = current.humidity;
-      row.querySelector(".precip").textContent = current.condition.text;
-      row.querySelector(".wind").textContent = current.wind_kph;
-    })
-    .catch((err) => {
-      console.error(`Error loading weather for ${city}`, err);
-    });
+			// Fill table cells
+			row.querySelector(".temp").textContent = current.temp_c;
+			row.querySelector(".feelslike").textContent = current.feelslike_c;
+			row.querySelector(".humidity").textContent = current.humidity;
+			row.querySelector(".precip").textContent = current.condition.text;
+			row.querySelector(".wind").textContent = current.wind_kph;
+		})
+		.catch((err) => {
+			console.error(`Error loading weather for ${city}`, err);
+		});
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  const rows = document.querySelectorAll("#weatherTable tbody tr");
+	const rows = document.querySelectorAll("#weatherTable tbody tr");
 
-  rows.forEach((row) => {
-    const city = row.dataset.city;
-    getTableWeather(city, row);
-  });
+	rows.forEach((row) => {
+		const city = row.dataset.city;
+		getTableWeather(city, row);
+	});
 });
