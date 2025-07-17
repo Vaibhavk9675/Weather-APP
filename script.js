@@ -32,7 +32,21 @@ const getWeather = (q) => {
 }
 document.querySelector("form").addEventListener("submit", (e) => {
 	e.preventDefault(); // Prevent page reload
-	getWeather(document.getElementById("city").value); // Get value from input
+	  const cityInput = document.getElementById("city");
+  const cityNameValue = cityInput.value.trim();
+
+  if (cityNameValue !== "") {
+    getWeather(cityNameValue);      // Call the API
+    cityInput.value = "";           // ✅ Clear the search bar
+    cityInput.blur();               // (optional) Remove focus
+    // cityInput.focus();           // (optional) If you want to keep the cursor in input
+
+	 const navbarCollapse = document.querySelector(".navbar-collapse");
+    if (navbarCollapse.classList.contains("show")) {
+      const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+      bsCollapse.hide();
+    }
+  }
 });
 
 getWeather("Delhi")
